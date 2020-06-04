@@ -13,7 +13,9 @@ openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout ./secrets/server.key -
 
 3. 建立 client 的 private key 跟 certificate
 
+```
 openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout ./secrets/client.key -subj '/CN=localhost' -out ./secrets/client.crt
+```
 
 4. 先啓動 server
 
