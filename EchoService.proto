@@ -1,0 +1,18 @@
+// Dependent: pip3 install grpcio
+// Compile: python3 -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I. EchoService.proto
+
+// EchoService.proto
+syntax = "proto3";
+
+service Echoer {
+    rpc SayHello(EchoRequest) returns (EchoReply) {}
+    rpc SayHelloAgain(EchoRequest) returns (EchoReply) {}
+}
+
+message EchoRequest {
+    string name = 1;
+}
+
+message EchoReply {
+    string message = 1;
+}
